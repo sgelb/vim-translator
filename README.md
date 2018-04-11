@@ -1,18 +1,17 @@
+This is a fork of [blindFS/vim-translator](https://github.com/blindFS/vim-translator) with my little changes.
 ## Dependencies
 
-* A translation tool. I suggest [translate-shell](https://github.com/soimort/translate-shell).
+* A translation tool. Defaults to  [translate-shell](https://github.com/soimort/translate-shell).
 * A player for pronunciation. Defaults to mplayer
 
 
 ## Install
 
 If you don't have a preferred method,
-I encourage you to use [neobundle.vim](http://github.com/shougo/neobundle.vim).
+I use [Vundle.vim](https://github.com/VundleVim/Vundle.vim).
 
 ``` vim
-NeoBundleLazy 'farseer90718/vim-translator', {
-            \ 'mappings' : '<Plug>Translate'
-            \ }
+Plugin 'tengufromsky/vim-translator'
 ```
 
 ## Usage
@@ -25,9 +24,16 @@ vmap R <Plug>TranslateReplace
 vmap P <Plug>TranslateSpeak
 ```
 
-* Assign `g:translate_cmd` to your preferred command for example `ydcv`,
+* Assign `g:translate_cmd` to your preferred command for example `trans -b :ru`,
 the first target language specified is used in "translate and replace".
+```
+let g:translate_cmd='trans -b :ru'
+```
 * Assign `g:translate_player` to your preferred cli stream player.
+```
+let g:translate_player='mplayer'
+
+```
 
 ## Demo
 
