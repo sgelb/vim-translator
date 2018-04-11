@@ -6,7 +6,7 @@ if !(exists('g:translate_cmd') || executable('trans'))
     echoerr 'You need to specify a command-line translator first.'
     finish
 endif
-let g:translate_cmd       = get(g:, 'translate_cmd', 'trans -b -t zh+ja')
+let g:translate_cmd       = get(g:, 'translate_cmd', 'trans -b :ru')
 let g:translate_player    = get(g:, 'translate_player', 'mplayer')
 let g:translate_auto_yank = get(g:, 'translate_auto_yank', 1)
 
@@ -51,7 +51,5 @@ endfunction
 vmap <silent> <Plug>Translate        :call translator#translate(0)<CR>
 vmap <silent> <Plug>TranslateSpeak   :call translator#speak()<CR>
 vmap <silent> <Plug>TranslateReplace :call translator#translate_replace()<CR>
-
-call s:translate_replace()
 
 let g:loaded_translator = 1
